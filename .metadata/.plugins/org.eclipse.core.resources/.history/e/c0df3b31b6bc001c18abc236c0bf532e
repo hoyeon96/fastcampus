@@ -1,0 +1,18 @@
+package ch03;
+
+import ch02.MyArray;
+
+public class MyArrayStack {
+	
+	MyArray arrayStack;
+	int top;
+	
+	public MyArrayStack() {
+		top = 0;
+		arrayStack = new MyArray();
+	}
+	
+	public MyArrayStack(int size) {
+		arrayStack = new MyArray(size);
+	}
+}

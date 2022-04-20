@@ -2,12 +2,11 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="a875d4a7-4d91-4fa4-843f-a61fe9226bce" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/src/dev/yeon/design/adapter/AirConditioner.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/dev/yeon/design/adapter/Cleaner.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/dev/yeon/design/adapter/Electronic110V.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/dev/yeon/design/adapter/Electronic220V.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/dev/yeon/design/adapter/HairDryer.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/dev/yeon/design/adapter/SocketAdapter.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/dev/yeon/design/aop/AopBrowser.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/dev/yeon/design/proxy/Browser.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/dev/yeon/design/proxy/BrowserProxy.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/dev/yeon/design/proxy/Html.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/dev/yeon/design/proxy/IBrowser.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/out/production/design/dev/yeon/design/Main.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/design/dev/yeon/design/Main.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/dev/yeon/design/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/dev/yeon/design/Main.java" afterDir="false" />
@@ -136,7 +135,7 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1650418469227</updated>
-      <workItem from="1650418474619" duration="1367000" />
+      <workItem from="1650418474619" duration="2364000" />
     </task>
     <servers />
   </component>

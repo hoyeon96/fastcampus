@@ -1,36 +1,50 @@
 package dev.yeon.design;
 
 import dev.yeon.design.adapter.*;
-import dev.yeon.design.singleton.AClazz;
-import dev.yeon.design.singleton.BClazz;
-import dev.yeon.design.singleton.SocketClient;
+import dev.yeon.design.aop.AopBrowser;
+import dev.yeon.design.proxy.Browser;
+import dev.yeon.design.proxy.BrowserProxy;
+import dev.yeon.design.proxy.IBrowser;
+
+import java.util.concurrent.atomic.AtomicLong;
 
 public class Main {
 
     public static void main(String[] args) {
 
-        /*
-        AClazz aClazz = new AClazz();
-        BClazz bClazz = new BClazz();
+//        Browser browser = new Browser("www.naver.com");
+//        browser.show();
+//        browser.show();
+//        browser.show();
+//        browser.show();
 
-        SocketClient aClient = aClazz.getSocketClient();
-        SocketClient bClient = bClazz.getSocketClient();
+//        IBrowser browser = new BrowserProxy("www.naver.com");
+//        browser.show();
+//        browser.show();
+//        browser.show();
+//        browser.show();
+//        browser.show();
 
-        System.out.println("두개의 객체가 동일한가?");
-        System.out.println(aClient.equals(bClient));
-         */
 
-        HairDryer hairDryer = new HairDryer();
-        connect(hairDryer);
+        AtomicLong start = new AtomicLong();
+        AtomicLong end = new AtomicLong();
 
-        Cleaner cleaner = new Cleaner();
 
-        SocketAdapter adapter = new SocketAdapter(cleaner);
-        connect(adapter);
+        IBrowser aopBrowser = new AopBrowser("www.naver.com",
+                ()-> {
+                    System.out.println("before");
+                    start.set(System.currentTimeMillis());
+                },
+                ()-> {
+                    long now = System.currentTimeMillis();
+                    end.set(now - start.get());
+                });
 
-        AirConditioner airConditioner = new AirConditioner();
-        SocketAdapter airAdapter = new SocketAdapter(airConditioner);
-        connect(airAdapter);
+        aopBrowser.show();
+        System.out.println("loading time : " + end.get());
+
+        aopBrowser.show();
+        System.out.println("loading time : " + end.get());
     }
 
     // 110v 콘센트

@@ -3,6 +3,8 @@ package dev.yeon.design;
 import dev.yeon.design.adapter.*;
 import dev.yeon.design.aop.AopBrowser;
 import dev.yeon.design.decorator.*;
+import dev.yeon.design.observer.Button;
+import dev.yeon.design.observer.IButtonListener;
 import dev.yeon.design.proxy.Browser;
 import dev.yeon.design.proxy.BrowserProxy;
 import dev.yeon.design.proxy.IBrowser;
@@ -13,26 +15,18 @@ public class Main {
 
     public static void main(String[] args) {
 
-        ICar audi = new Audi(1000);
-        audi.showPrice();
-
-        // a3
-        ICar audi3 = new A3(audi, "A3");
-        audi3.showPrice();
-
-        // a4
-        ICar audi4 = new A4(audi, "A4");
-        audi4.showPrice();
-
-        // a5
-        ICar audi5 = new A5(audi, "A5");
-        audi5.showPrice();
+        Button button = new Button("버튼");
+        button.addListener(new IButtonListener() {
+            @Override
+            public void clickEvent(String event) {
+                System.out.println(event);
+            }
+        });
+        button.click("메시지 전달 : click 1");
+        button.click("메시지 전달 : click 2");
+        button.click("메시지 전달 : click 3");
+        button.click("메시지 전달 : click 4");
 
 
-    }
-
-    // 110v 콘센트
-    public static void connect(Electronic110V electronic110V){
-        electronic110V.powerOn();
     }
 }

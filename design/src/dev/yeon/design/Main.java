@@ -12,6 +12,7 @@ import dev.yeon.design.observer.IButtonListener;
 import dev.yeon.design.proxy.Browser;
 import dev.yeon.design.proxy.BrowserProxy;
 import dev.yeon.design.proxy.IBrowser;
+import dev.yeon.design.strategy.*;
 
 import java.util.concurrent.atomic.AtomicLong;
 
@@ -19,27 +20,26 @@ public class Main {
 
     public static void main(String[] args) {
 
-        Ftp ftpClient = new Ftp("www.foo.co.kr", 22, "/home/etc");
-        ftpClient.connect();
-        ftpClient.moveDirectory();
+        Encoder encoder = new Encoder();
 
-        Writer writer = new Writer("text.tmp");
-        writer.fileConnect();
-        writer.write();
+        // base 64
+        EncodingStrategy base64 = new Base64Strategy();
 
-        Reader reader = new Reader("text.tmp");
-        reader.fileConnect();
-        reader.fileRead();
+        // normal
+        EncodingStrategy normal = new NormalStrategy();
 
-        reader.fileDisconnect();
-        writer.fileDisConnect();
-        ftpClient.disConnect();
+        String message = "hello java";
+        encoder.setEncodingStrategy(base64);
+        String base64Result = encoder.getMessage(message);
+        System.out.println(base64Result);
 
-        SftpClient sftpClient = new SftpClient("www.foo.co.kr", 22, "/home/etc", "text.tmp");
-        sftpClient.connect();
-        sftpClient.write();
-        sftpClient.read();
-        sftpClient.disConnect();
+        encoder.setEncodingStrategy(normal);
+        String normalResult = encoder.getMessage(message);
+        System.out.println(normalResult);
+
+        encoder.setEncodingStrategy(new AppendStrategy());
+        String appendResult = encoder.getMessage(message);
+        System.out.println(appendResult);
 
     }
 }

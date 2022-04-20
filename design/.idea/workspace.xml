@@ -2,10 +2,11 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="a875d4a7-4d91-4fa4-843f-a61fe9226bce" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/src/dev/yeon/design/facade/Ftp.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/dev/yeon/design/facade/Reader.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/dev/yeon/design/facade/SftpClient.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/dev/yeon/design/facade/Writer.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/dev/yeon/design/strategy/AppendStrategy.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/dev/yeon/design/strategy/Base64Strategy.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/dev/yeon/design/strategy/Encoder.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/dev/yeon/design/strategy/EncodingStrategy.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/dev/yeon/design/strategy/NormalStrategy.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/out/production/design/dev/yeon/design/Main.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/design/dev/yeon/design/Main.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/dev/yeon/design/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/dev/yeon/design/Main.java" afterDir="false" />
@@ -135,7 +136,7 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1650418469227</updated>
-      <workItem from="1650418474619" duration="4681000" />
+      <workItem from="1650418474619" duration="5260000" />
     </task>
     <servers />
   </component>

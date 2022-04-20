@@ -2,6 +2,7 @@ package dev.yeon.design;
 
 import dev.yeon.design.adapter.*;
 import dev.yeon.design.aop.AopBrowser;
+import dev.yeon.design.decorator.*;
 import dev.yeon.design.proxy.Browser;
 import dev.yeon.design.proxy.BrowserProxy;
 import dev.yeon.design.proxy.IBrowser;
@@ -12,39 +13,22 @@ public class Main {
 
     public static void main(String[] args) {
 
-//        Browser browser = new Browser("www.naver.com");
-//        browser.show();
-//        browser.show();
-//        browser.show();
-//        browser.show();
+        ICar audi = new Audi(1000);
+        audi.showPrice();
 
-//        IBrowser browser = new BrowserProxy("www.naver.com");
-//        browser.show();
-//        browser.show();
-//        browser.show();
-//        browser.show();
-//        browser.show();
+        // a3
+        ICar audi3 = new A3(audi, "A3");
+        audi3.showPrice();
 
+        // a4
+        ICar audi4 = new A4(audi, "A4");
+        audi4.showPrice();
 
-        AtomicLong start = new AtomicLong();
-        AtomicLong end = new AtomicLong();
+        // a5
+        ICar audi5 = new A5(audi, "A5");
+        audi5.showPrice();
 
 
-        IBrowser aopBrowser = new AopBrowser("www.naver.com",
-                ()-> {
-                    System.out.println("before");
-                    start.set(System.currentTimeMillis());
-                },
-                ()-> {
-                    long now = System.currentTimeMillis();
-                    end.set(now - start.get());
-                });
-
-        aopBrowser.show();
-        System.out.println("loading time : " + end.get());
-
-        aopBrowser.show();
-        System.out.println("loading time : " + end.get());
     }
 
     // 110v 콘센트

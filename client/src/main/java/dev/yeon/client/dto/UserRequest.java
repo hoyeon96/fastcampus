@@ -1,7 +1,7 @@
 package dev.yeon.client.dto;
 
 
-public class UserResponse {
+public class UserRequest {
 
     private String name;
     private int age;
@@ -24,7 +24,7 @@ public class UserResponse {
 
     @Override
     public String toString() {
-        return "UserResponse{" +
+        return "UserRequest{" +
                 "name='" + name + '\'' +
                 ", age=" + age +
                 '}';
